@@ -2,11 +2,14 @@ package school.lesson4.task2;
 
 public interface Figure {
     double getPerimeter();
+
     double getArea();
+
     String getColorFill();
+
     String getColorBorder();
 
-    default void figureInfo () {
+    default void figureInfo() {
         System.out.println("Периметр = " + getPerimeter());
         System.out.println("Площадь = " + getArea());
         System.out.println("Цвет фона " + getColorFill());

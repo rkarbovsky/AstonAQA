@@ -1,19 +1,16 @@
 package school.lesson4.task1;
 
-public class Animal {
+public abstract class Animal {
 
-    String name;
-    int limitRun;
-    int limitSwim;
-    static int animalCount = 0;
+    private String name;
+    private static int animalCount;
 
-    public Animal(String name, int limitRun, int limitSwim) {
+    public Animal(String name) {
         this.name = name;
-        this.limitRun = limitRun;
-        this.limitSwim = limitSwim;
+        animalCount++;
     }
 
-    void run (int distance) {
+    void run(int distance, int limitRun) {
         if (distance <= limitRun) {
             System.out.println(name + " пробежал " + distance + " м.");
         } else {
@@ -21,17 +18,19 @@ public class Animal {
         }
     }
 
-    void swim (int distance) {
-        if (distance <= limitSwim && distance != 0) {
-            System.out.println(name + " проплыл " + distance + " м.");
-        } else if (limitSwim == 0) {
-            System.out.println("Коты не умеют плавать");
+    void swim(int distance, int limitSwim, boolean canSwim) {
+        if (canSwim) {
+            if (distance <= limitSwim) {
+                System.out.println(name + " проплыл " + distance + " м.");
+            } else {
+                System.out.println(name + " не может проплыть более " + limitSwim + " м.");
+            }
         } else {
-            System.out.println(name + " не может проплыть более " + limitSwim + " м.");
+            System.out.println("Животное не умеет плавать");
         }
     }
 
     public static void getAnimalCount() {
-        System.out.println("Всего животных = " + animalCount);
+        System.out.println("Всего животных - " + animalCount + ":");
     }
 }

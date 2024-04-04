@@ -1,19 +1,49 @@
 package school.lesson4.task1;
 
 public class Cat extends Animal {
-    public static int catCount = 0;
-    boolean satiety;
-    public int catFood;
+    private static int catCount;
+    private boolean satiety;
+    private int appetite;
 
-    public Cat(String name, int limitRun, int limitSwim, boolean satiety, int catFood) {
-        super(name, limitRun, limitSwim);
-        animalCount++;
+    public Cat(String name) {
+        super(name);
         catCount++;
-        this.satiety = satiety;
-        this.catFood = catFood;
     }
 
     public static void getCatCount() {
-        System.out.println("Всего котов = " + catCount);
+        System.out.println(" - котов - " + catCount);
+    }
+
+    public boolean isSatiety() {
+        return satiety;
+    }
+
+    public void setSatiety(boolean satiety) {
+        this.satiety = satiety;
+    }
+
+    public int getLimitRun() {
+        return 200;
+    }
+
+    public boolean isCanSwim() {
+        return false;
+    }
+
+    public int getLimitSwim() {
+        return 0;
+    }
+
+    public int getAppetite() {
+        return appetite;
+    }
+
+    public void setAppetite(int appetite) {
+        this.appetite = appetite;
+    }
+
+    public void eat(Bowl bowl) {
+        System.out.println("Котик скушал " + appetite + " еды");
+        bowl.eatFood(appetite);
     }
 }
