@@ -19,7 +19,18 @@ public class MainClass {
             if (personArray[i].age > 40) {
                 personArray[i].printPerson();
             }
+        }
 
+        Park.Attraction[] attractions = new Park.Attraction[3];
+        attractions[0] = new Park.Attraction("Автодром", "08:00 - 16:00", 150);
+        attractions[1] = new Park.Attraction("НЛО", "09:00 - 17:00", 210);
+        attractions[2] = new Park.Attraction("Супернова", "09:00 - 16:30", 130);
+
+        for (int i = 0; i < attractions.length; i++) {
+            System.out.println("Аттракцион " + attractions[i].nameAttraction);
+            System.out.println("Время работы: " + attractions[i].workHours);
+            System.out.println("Стоимость билета: " + attractions[i].cost);
+            System.out.println("-------------");
         }
     }
 }

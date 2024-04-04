@@ -1,11 +1,16 @@
 package school.lesson3;
 
 public class Park {
-    String namePark;
 
-    public class Attraction {
+    public static class Attraction {
         String nameAttraction;
         String workHours;
         int cost;
+
+        public Attraction(String nameAttraction, String workHours, int cost) {
+            this.nameAttraction = nameAttraction;
+            this.workHours = workHours;
+            this.cost = cost;
+        }
     }
 }
