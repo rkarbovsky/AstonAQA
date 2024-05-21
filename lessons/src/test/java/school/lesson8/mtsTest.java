@@ -17,7 +17,7 @@ public class mtsTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.mts.by/");
 
-        // отклоняем обработку куки
+        // отклоняем обработку cookies
         WebElement cookieButton = driver.findElement(By.xpath("/html/body/div[6]/main/div/div[2]/div/div[2]/button[2]"));
         cookieButton.click();
 
